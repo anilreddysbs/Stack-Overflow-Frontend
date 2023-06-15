@@ -8,7 +8,12 @@ export const signup = (authData,navigate) => async(dispatch)=>{
         navigate('/')
     }
     catch(error){
-        console.log(error)
+        if((error.message.split(" "))[5] === "404"){
+            alert("User already exists,Login to continue")
+        }
+        else{
+            console.log(error)
+        }
     }
 }
 export const login = (authData,navigate) => async(dispatch) => {
@@ -18,6 +23,11 @@ export const login = (authData,navigate) => async(dispatch) => {
         navigate('/')
     }
     catch(error){
-        console.log(error)
+        if((error.message.split(" "))[5] === "404"){
+            alert("User not found,Signup first")
+        }
+        else{
+            console.log(error)
+        }
     }
 }

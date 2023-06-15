@@ -9,8 +9,9 @@ const Questions = ({question}) => {
             <p>{question.upVote.length-question.downVote.length}</p>
             <p>votes</p>
         </div>
+        {/* {console.log(question)} */}
         <div className='display-votes-ans'>
-            <p>{question.noofAnswers}</p>
+            <p>{question.noOfAnswers}</p>
             <p>answers</p>
         </div>
         <div className='display-question-details'>
